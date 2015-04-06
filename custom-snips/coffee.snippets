@@ -1,0 +1,36 @@
+snippet qtest "Scaffold for qunit ember test file"
+App = undefind
+
+module "${1:Module Description}"
+  setup: ->
+	App = startApp()
+	return
+  teardown: ->
+	Ember.run(App, "destroy")
+	$.mockjaxClear()
+
+test "${2:Test Description}", ->
+  equal(1, 2)
+endsnippet
+
+snippet cl "console.log(...)" b
+console.log $0
+endsnippet
+
+snippet ie "import Ember" b
+\`import Ember from 'ember'\`
+endsnippet
+
+snippet ied "import ember-data" b
+\`import DS from 'ember-data'\`
+endsnippet
+
+snippet ed "export default" b
+\`export default $0\`
+endsnippet
+
+snippet prop ".property()" b
+${1}: (->
+	${2}
+).property()
+endsnippet
