@@ -2,6 +2,6 @@
 
 # dotfiles_extra
 
-This dotfile repo is the plugable custom configuration for JarrodCTaylor's famous [dotfiles](https://github.com/JarrodCTaylor/dotfiles).
+This dotfile repo is the plugable custom configuration for the always inspirational JarrodCTaylor's famous [dotfiles](https://github.com/JarrodCTaylor/dotfiles).
 
 In my opinion they are the best dotfiles.  Go pull them down and give him a star.
