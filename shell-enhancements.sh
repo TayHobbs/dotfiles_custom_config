@@ -23,6 +23,12 @@ export KEYTIMEOUT=1
 
 # Aliases <<1
 #-------------------------------------------------------------------------------
+move_dir() {
+    cd ~/Projects/$1
+}
+move_dir_copy() {
+    cd ~/copy-projects/$1
+}
 if [ "$(uname)" = "Darwin" ]; then
     alias update='brew update && brew upgrade'
     alias upgrade='brew upgrade'
@@ -41,14 +47,23 @@ alias ping='ping -c 5'      # Pings with 5 packets, not unlimited
 alias gs='git status'
 alias gd='git diff'
 alias gc='git commit'
-alias push='git push origin master'
-alias pull='git pull --rebase'
+alias push='git publish'
+alias pull='git pull-rebase'
 alias ts='tig status'
 alias delete_pyc='find . -name \*.pyc -exec rm \{\} \+'
 alias c='clear'
 alias vom='vim'
 alias vi='vim'
 alias cljs='planck'
+alias ec2="AWS_DEFAULT_PROFILE=imt /Users/taylorhobbs/.virtualenvs/build/bin/aws-fuzzy --key-path ~/.ssh/staging-key-bastion.pem --tunnel --tunnel-key-path 'staging-key-beanstalk.pem'"
+alias ec2prod="AWS_DEFAULT_PROFILE=imt /Users/taylorhobbs/.virtualenvs/build/bin/aws-fuzzy --key-path ~/.ssh/production-key-bastion.pem --tunnel --tunnel-key-path 'production-key-beanstalk.pem'"
+alias bastion_prod='ssh -i ~/.ssh/production-key-bastion.pem -L 1234:productionmain.cyvr1qhxdlsh.us-west-2.rds.amazonaws.com:5432 ec2-user@52.88.233.110'
+alias bastion_staging='ssh -i ~/.ssh/staging-key-bastion.pem -L 1234:stagingmain2.cyvr1qhxdlsh.us-west-2.rds.amazonaws.com:5432 ec2-user@35.161.128.4'
+alias gcb='git checkout -b'
+alias cdp=move_dir
+alias copycd=move_dir_copy
+alias pr='hub pull-request'
+
 # >>1
 
 # Functions <<1
