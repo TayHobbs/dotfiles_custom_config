@@ -63,6 +63,7 @@ alias gcb='git checkout -b'
 alias cdp=move_dir
 alias copycd=move_dir_copy
 alias pr='hub pull-request'
+alias gcm='git checkout master'
 
 # >>1
 
