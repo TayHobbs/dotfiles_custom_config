@@ -1,15 +1,14 @@
 "===============================================================================
 " Plugin source
 "===============================================================================
-"'mattn/emmet-vim'
+"'posva/vim-vue'
 
 "===============================================================================
 " Plugin Configurations
 "===============================================================================
-let g:user_emmet_install_global = 0
-let g:user_emmet_leader_key=','
-" Enable just in html-like files
-autocmd FileType html,htmldjango,handlebars,html.handlebars,eruby,vue EmmetInstall
+let g:vue_disable_pre_processors=1
+autocmd FileType vue syntax sync fromstart
+autocmd BufRead,BufNewFile *.vue setf vue
 
 "===============================================================================
 " Plugin Keymappings
@@ -19,4 +18,4 @@ autocmd FileType html,htmldjango,handlebars,html.handlebars,eruby,vue EmmetInsta
 "===============================================================================
 " Unite Keymap Menu Item(s)
 "===============================================================================
-let g:unite_source_menu_menus.CustomKeyMaps.command_candidates += [['➤ Trigger emmet expansion                                       ,', 'echo "use `,` to expand html tags"']]
+" N/A

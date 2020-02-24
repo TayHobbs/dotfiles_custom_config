@@ -24,11 +24,22 @@ export KEYTIMEOUT=1
 # Aliases <<1
 #-------------------------------------------------------------------------------
 move_dir() {
-    cd ~/Projects/$1
+    cd ~/workspace/$1
 }
+
 move_dir_copy() {
-    cd ~/copy-projects/$1
+    cd ~/testworkspace/$1
 }
+
+merge_origin() {
+    git merge origin/$1
+}
+
+cdsitepackages() {
+    VENV_CUR_DIR="${PWD##*/}"
+    cd ~/.pyenv/versions/$VENV_CUR_DIR
+}
+
 if [ "$(uname)" = "Darwin" ]; then
     alias update='brew update && brew upgrade'
     alias upgrade='brew upgrade'
@@ -51,6 +62,9 @@ alias push='git publish'
 alias pull='git pull-rebase'
 alias ts='tig status'
 alias delete_pyc='find . -name \*.pyc -exec rm \{\} \+'
+alias activate='pyenv activate'
+alias deactivate='pyenv deactivate'
+alias rmvirtualenv='pyenv virtualenv-delete'
 alias c='clear'
 alias vom='vim'
 alias vi='vim'
@@ -60,10 +74,12 @@ alias ec2prod="AWS_DEFAULT_PROFILE=imt /Users/taylorhobbs/.virtualenvs/build/bin
 alias bastion_prod='ssh -i ~/.ssh/production-key-bastion.pem -L 1234:productionmain.cyvr1qhxdlsh.us-west-2.rds.amazonaws.com:5432 ec2-user@52.88.233.110'
 alias bastion_staging='ssh -i ~/.ssh/staging-key-bastion.pem -L 1234:stagingmain2.cyvr1qhxdlsh.us-west-2.rds.amazonaws.com:5432 ec2-user@35.161.128.4'
 alias gcb='git checkout -b'
-alias cdp=move_dir
-alias copycd=move_dir_copy
+alias cdw=move_dir
+alias cdtw=move_dir_copy
 alias pr='hub pull-request'
 alias gcm='git checkout master'
+alias m/=merge_origin
+alias cdsitepackages=cdsitepackages
 
 # >>1
 
