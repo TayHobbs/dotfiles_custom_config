@@ -9,6 +9,7 @@
 let g:ale_emit_conflict_warnings = 0
 let g:ale_linters = {'html': []}
 let g:ale_fixers = { 'javascript': ['eslint'] }
+let g:ale_echo_msg_format = '[%linter%: %code%] %s [%severity%]'
 
 "===============================================================================
 " Plugin Keymappings
