@@ -62,17 +62,14 @@ alias push='git publish'
 alias pull='git pull-rebase'
 alias ts='tig status'
 alias delete_pyc='find . -name \*.pyc -exec rm \{\} \+'
+alias mkvenv='pyenv virtualenv'
 alias activate='pyenv activate'
 alias deactivate='pyenv deactivate'
 alias rmvirtualenv='pyenv virtualenv-delete'
 alias c='clear'
 alias vom='vim'
-alias vi='vim'
+alias vi='nvim'
 alias cljs='planck'
-alias ec2="AWS_DEFAULT_PROFILE=imt /Users/taylorhobbs/.virtualenvs/build/bin/aws-fuzzy --key-path ~/.ssh/staging-key-bastion.pem --tunnel --tunnel-key-path 'staging-key-beanstalk.pem'"
-alias ec2prod="AWS_DEFAULT_PROFILE=imt /Users/taylorhobbs/.virtualenvs/build/bin/aws-fuzzy --key-path ~/.ssh/production-key-bastion.pem --tunnel --tunnel-key-path 'production-key-beanstalk.pem'"
-alias bastion_prod='ssh -i ~/.ssh/production-key-bastion.pem -L 1234:productionmain.cyvr1qhxdlsh.us-west-2.rds.amazonaws.com:5432 ec2-user@52.88.233.110'
-alias bastion_staging='ssh -i ~/.ssh/staging-key-bastion.pem -L 1234:stagingmain2.cyvr1qhxdlsh.us-west-2.rds.amazonaws.com:5432 ec2-user@35.161.128.4'
 alias gcb='git checkout -b'
 alias cdw=move_dir
 alias cdtw=move_dir_copy
@@ -80,6 +77,10 @@ alias pr='hub pull-request'
 alias gcm='git checkout master'
 alias m/=merge_origin
 alias cdsitepackages=cdsitepackages
+alias dup='docker compose up'
+alias dd='docker compose down'
+alias ds='docker compose stop'
+
 
 # >>1
 
