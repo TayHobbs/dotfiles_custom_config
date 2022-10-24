@@ -24,11 +24,11 @@ export KEYTIMEOUT=1
 # Aliases <<1
 #-------------------------------------------------------------------------------
 move_dir() {
-    cd ~/workspace/$1
+    cd ~/codebase/$1
 }
 
 move_dir_copy() {
-    cd ~/testworkspace/$1
+    cd ~/testprojects/$1
 }
 
 merge_origin() {
@@ -56,8 +56,12 @@ alias less='less -imJMW'
 alias tmux="TERM=screen-256color-bce tmux"  # Fix tmux making vim colors funky
 alias ping='ping -c 5'      # Pings with 5 packets, not unlimited
 alias gs='git status'
+alias gst='git stash'
+alias pop='git stash pop'
 alias gd='git diff'
 alias gc='git commit'
+alias gcp='git checkout production'
+alias gcs='git checkout production'
 alias push='git publish'
 alias pull='git pull-rebase'
 alias ts='tig status'
@@ -67,7 +71,7 @@ alias activate='pyenv activate'
 alias deactivate='pyenv deactivate'
 alias rmvirtualenv='pyenv virtualenv-delete'
 alias c='clear'
-alias vom='vim'
+alias vom='nvim'
 alias vi='nvim'
 alias cljs='planck'
 alias gcb='git checkout -b'
@@ -75,11 +79,17 @@ alias cdw=move_dir
 alias cdtw=move_dir_copy
 alias pr='hub pull-request'
 alias gcm='git checkout master'
-alias m/=merge_origin
+alias m=merge_origin
 alias cdsitepackages=cdsitepackages
 alias dup='docker compose up'
 alias dd='docker compose down'
 alias ds='docker compose stop'
+alias logins='aws sso login --profile'
+alias loginp='aws sso login --profile'
+alias sqls='psqls'
+alias sqlp='psqlp'
+alias ecsrun='ecsrun_func'
+alias ecsruns='ecsruns_func'
 
 
 # >>1
@@ -225,7 +235,7 @@ function extract()
 # >>2
 # Find a file with a pattern in name: <<2
 #--------------------------------------------------------------------
-function ff() { find . -type f -iname '*'"$*"'*' -ls ; }
+function ffile() { find . -type f -iname '*'"$*"'*' -ls ; }
 # >>2
 # Create an archive (*.tar.gz) from given directory <<2
 #--------------------------------------------------------------------
